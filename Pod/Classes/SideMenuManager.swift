@@ -178,11 +178,12 @@ open class SideMenuManager: NSObject {
             guard menuLeftNavigationController != oldValue else {
                 return
             }
-            guard oldValue?.presentingViewController == nil else {
-                print("SideMenu Warning: menuLeftNavigationController cannot be modified while it's presented.")
-                menuLeftNavigationController = oldValue
-                return
-            }
+            // MARK: Mohsin's Changes
+            //            guard oldValue?.presentingViewController == nil else {
+            //                print("SideMenu Warning: menuLeftNavigationController cannot be modified while it's presented.")
+            //                menuLeftNavigationController = oldValue
+            //                return
+            //            }
             
             setupNavigationController(menuLeftNavigationController, leftSide: true)
         }
